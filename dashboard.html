@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Document Locker Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <span class="welcome-message">Welcome, <span id="usernameDisplay">  </span></span>
+    </div>
+    <div class="navbar-right">
+      <button onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Upload Document</h2>
+    <input type="file" id="fileInput">
+    <input type="text" id="documentName" placeholder="Document Name">
+    <input type="date" id="issueDate" placeholder="Issue Date">
+    <button onclick="addDocument()">Add Document</button>
+    <table id="documentTable">
+      <thead>
+        <tr>
+          <th>S. No.</th>
+          <th>Document Name</th>
+          <th>Issue Date</th>
+          <th>View Document</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // Retrieve the username from localStorage
+    var username = localStorage.getItem("username");
+    // Display the username
+    document.getElementById("usernameDisplay").innerText =  username;
+</script>
+  <script src="script.js"></script>
+  <script src="loginscript.js"></script>
+  
+</body>
+
+</html>
